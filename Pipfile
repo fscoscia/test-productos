@@ -10,6 +10,7 @@ djangorestframework-simplejwt = "*"
 djangorestframework-camel-case = "*"
 python-dotenv = "*"
 pillow = "*"
+django-filter = "*"
 
 [dev-packages]
 
