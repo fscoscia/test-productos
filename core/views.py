@@ -7,6 +7,7 @@ from core.serializers import (
     ProductListSerializer,
     ProductPartialSerializer,
 )
+from users.permissions import ProductModelPermission
 
 
 class ProductViewSet(
@@ -22,6 +23,13 @@ class ProductViewSet(
         "name",
     ]
     filterset_fields = ["state", "categories"]
+
+    def get_permissions(self):
+        if self.action in ["update", "destroy"]:
+            permission_classes = [ProductModelPermission]
+        else:
+            permission_classes = []
+        return [permission() for permission in permission_classes]
 
     def get_serializer_class(self):
         if self.request.user.is_anonymous:
