@@ -19,7 +19,7 @@ class ProductPartialSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ("name", "state")
+        fields = ("id", "name", "state")
 
 
 class ProductListSerializer(ProductPartialSerializer):

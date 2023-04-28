@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets, mixins
 
-from core.models import Product
+from core.models import Category, Product
 from core.serializers import (
+    CategorySerializer,
     ProductDetailSerializer,
     ProductListSerializer,
     ProductPartialSerializer,
@@ -37,3 +38,8 @@ class ProductViewSet(
         if self.action in ["retrieve", "update"]:
             return ProductDetailSerializer
         return ProductListSerializer
+
+
+class CategoryViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
