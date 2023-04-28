@@ -3,6 +3,10 @@
 -   Python >= 3.7
 -   Pipenv
 
+## Aprobación de usuarios
+
+Para aprobar un usuario dirigirse a la sección usuarios en el administrador de django, seleccionar los usuarios a aprobar y seleccionar la acción "Aprobar usuario".
+
 ## Entorno de desarrollo
 
 1. En la carpeta raíz, crea un archivo `.env` con el siguiente contenido:
